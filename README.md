@@ -1,6 +1,6 @@
 # ddtree
 
-fantastic dodekamin tree project   
+fantastic dodekamin tree project  
 触ったことあるからっていうだけでDjango使うことにしたけど、  
 この小ささの規模で書くならもっと適した言語や方法がある気がしてならない、  
 が、とりあえずこれで進めていく  
