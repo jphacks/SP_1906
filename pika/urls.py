@@ -19,10 +19,22 @@ from . import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     path("", views.index, name="index"),
     path("posttest/", views.posttest, name="posttest"),
     path("table/",views.table,name="table"),
-    path("canvas",views.canvas,name="canvas"),
+    path("canvas/",views.canvas,name="canvas"),
+    path("esp/",views.esp,name="esp"),
+
+    path("tree",views.tree, name="tree"),
+    path("about",views.about, name="about"),
+    path("post",views.post, name="post"),
+    path("waitinglist",views.waitinglist, name="waitinglist"),
+
 
 ]
+#index
+#tree
+#about
+#post
+#waitinglist

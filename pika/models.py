@@ -8,13 +8,19 @@ class Tree(models.Model):
     CHOICES = (
     (1, 'クール'),
     (2, 'かわいい'),
-    (3, 'ロマンティック'),
+    (3, 'おしゃれ'),
+    (4, 'ばえ'),
+    (5, '読める！'),
+    (6, 'おもしろい'),
+
     )
     look = models.IntegerField(choices=CHOICES)
     data = models.TextField(max_length=5000)
+    lighted = models.BooleanField(default=False)
 
 
     def __str__(self):
-        return self.name + ", " +str(self.look)
+        return self.name + ", " +str(self.look) + ", " +str(self.lighted)
+
 
 
