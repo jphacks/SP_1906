@@ -1,0 +1,380 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Ensures proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Forces IE 8/9/10 to use its latest rendering engine -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Pixel Art Maker</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <!--<link rel="stylesheet" href="./styles.css">-->
+  </head>
+
+<body>
+<style>
+body{margin: 150px; background-color: aliceblue;}
+table {border-collapse: collapse}
+td{border: 1px solid #AAAAAA; padding: 3px; height: 30px}
+.shita{width: 20px}
+.kesu{border: 0px}
+</style>
+
+    <div class="row">
+      <div class="column">
+        <div class="inputs">
+          <!-- class names all lower case and delimited with hyphens per Udacity Frontend Nanodegree Style Guide (CSS page) -->
+          <form class="clearing">
+            <input type="submit" class="submit-button" value="clear">
+          </form>
+          <br><br>
+          <h4>select color</h4>
+          <input type="color" class="color-picker" value="#6aa5b8">
+          <input type="button" class="quick-fill" value="fill">
+          <h4>mode</h4>
+          <input type="button" class="erase-mode" value="erase">
+          <input type="button" class="draw-mode" value="draw">
+        </div>
+      </div>
+      <!--以下表-->
+      <div class="column">
+        <table id="canvas1"class="pixel-canvas">
+	    <tbody>
+		<tr>
+			<td rowspan="11" class="kesu"></td>
+			<td rowspan="9"class="kesu"></td>
+			<td rowspan="7"class="kesu"></td>
+			<td rowspan="6"class="kesu"></td>
+			<td rowspan="5"class="kesu"></td>
+			<td rowspan="4"class="kesu"></td>
+			<td colspan="2" rowspan="3"class="kesu"></td>
+			<td rowspan="2"class="kesu"></td>
+			<td class="kesu"></td>
+			<td colspan="2" id="test"></td>
+			<td colspan="2"></td>
+			<td class="kesu"></td>
+			<td rowspan="2"class="kesu"></td>
+			<td colspan="2" rowspan="3"class="kesu"></td>
+			<td rowspan="4"class="kesu"></td>
+			<td rowspan="5"class="kesu"></td>
+			<td rowspan="6"class="kesu"></td>
+			<td rowspan="7"class="kesu"></td>
+			<td rowspan="9"class="kesu"></td>
+			<td rowspan="11"class="kesu"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr class="twelve">
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+			<td colspan="2" class="shita"></td>
+		</tr>
+	    </tbody>
+        </table>
+        <br>
+      </div>
+    </div>
+
+
+
+
+<script>
+const clear = document.querySelector('.clearing');
+const pixelCanvas = document.querySelector('.pixel-canvas');
+const quickFill = document.querySelector('.quick-fill');
+const eraseMode = document.querySelector('.erase-mode');
+const drawMode = document.querySelector('.draw-mode');
+
+// to clear the color of the table
+clear.addEventListener('submit', function(e) {
+  //e.preventDefault();
+  var table1=document.getElementById("canvas1")
+  table1.target.style.backgroundColor=white;
+});
+
+// Enables color dragging with selected color (code for filling in single cell is above). (No click on 'draw' mode needed; this is default mode)
+let down = false; 
+const kesu = document.getElementsByClassName("kesu");
+
+function tree(){
+  for(var i=0;i<18;i++){
+  kesu[i].style.backgroundColor="#f0f8ff";//same as the bgcolor
+  }
+}
+//クリックで色を変わらせるために、まず各tdに対してonmousedownで待つ。
+var tt = document.getElementById("canvas1");
+var eachtd = tt.querySelectorAll(":scope > tbody > tr > td");
+
+
+for(var i=0;i<eachtd.length;i++){
+eachtd[i].addEventListener('mousedown', function() {
+    const color = document.querySelector('.color-picker').value;
+    this.style.backgroundColor = color;
+    tree();
+    })
+    
+  }
+
+
+
+// Listens for mouse pointer press and release on grid. Changes value to true when pressed, but sets it back to false as soon as released
+pixelCanvas.addEventListener('mousedown', function(e) {
+	down = true;
+	pixelCanvas.addEventListener('mouseup', function() {
+		down = false;
+	});
+  // Ensures cells won't be colored if grid is left while pointer is held down
+  pixelCanvas.addEventListener('mouseleave', function() {
+    down = false;
+    tree();
+  });
+
+  pixelCanvas.addEventListener('mouseover', function(e) {
+    // 'color' defined here rather than globally so JS checks whether user has changed color with each new mouse press on cell
+    const color = document.querySelector('.color-picker').value;
+    // While mouse pointer is pressed and within grid boundaries, fills cell with selected color. Inner if statement fixes bug that fills in entire grid
+  	if (down) {
+      // 'TD' capitalized because element.tagName returns upper case for DOM trees that represent HTML elements
+      if (e.target.tagName === 'TD') {
+      	e.target.style.backgroundColor = color;
+        tree();
+      }
+    }
+  });
+});
+
+// Adds color-fill functionality. e.preventDefault(); intercepts page refresh on button click
+quickFill.addEventListener('click', function(e) {
+  e.preventDefault();
+  const color = document.querySelector('.color-picker').value;
+  pixelCanvas.querySelectorAll('td').forEach(td => td.style.backgroundColor = color);
+  //done const) var kesu = document.getElementsByClassName("kesu");
+  for(var i=0;i<18;i++){
+  kesu[i].style.backgroundColor="#f0f8ff";//same as the bgcolor
+  }
+});
+
+
+// NONDEFAULT DRAW AND ERASE MODES:
+// Allows for drag and single-cell erasing upon clicking 'erase' button. Code for double-click erase functionality (Without entering erase mode) is above. Also note 'down' was set to false in variable above
+eraseMode.addEventListener('click', function() {
+  // Enables drag erasing while in erase mode
+  pixelCanvas.addEventListener('mousedown', function(e) {
+  	down = true;
+  	pixelCanvas.addEventListener('mouseup', function() {
+  		down = false;
+  	});
+    // Ensures cells won't be erased if grid is left while pointer is held down
+    pixelCanvas.addEventListener('mouseleave', function() {
+      down = false;
+    });
+    pixelCanvas.addEventListener('mouseover', function(e) {
+      // While mouse pointer is pressed and within grid boundaries, empties cell contents. Inner if statement fixes bug that fills in entire grid
+    	if (down) {
+        if (e.target.tagName === 'TD') {
+        	e.target.style.backgroundColor = null;
+        }
+      }
+    });
+  });
+  // Enables single-cell erase while in erase mode
+  pixelCanvas.addEventListener('mousedown', function(e) {
+    e.target.style.backgroundColor = null;
+  });
+});
+
+// Allows user to return to (default) draw mode after using 'erase' button. Note 'down' was set to false in variable above
+drawMode.addEventListener('click', function() {
+  pixelCanvas.addEventListener('mousedown', function(e) {
+  	down = true;
+  	pixelCanvas.addEventListener('mouseup', function() {
+  		down = false;
+  	});
+    // Ensures cells won't be colored if grid is left while pointer is held down
+    pixelCanvas.addEventListener('mouseleave', function() {
+      down = false;
+    });
+    pixelCanvas.addEventListener('mouseover', function(e) {
+      const color = document.querySelector('.color-picker').value;
+      // While mouse pointer is pressed and within grid boundaries, fills cell with selected color. Inner if statement fixes bug that fills in entire grid
+    	if (down) {
+        if (e.target.tagName === 'TD') {
+        	e.target.style.backgroundColor = color;
+        }
+      }
+    });
+  });
+  // Enables single-cell coloring while in draw mode
+  pixelCanvas.addEventListener('mousedown', function(e) {
+    if (e.target.tagName !== 'TD') return;
+    const color = document.querySelector('.color-picker').value;
+    e.target.style.backgroundColor = color;
+    tree();
+  });
+
+});
+
+
+
+    </script>
+
+	<a onclick="execPost('{% url goto %}');return false;" href="{% url goto %}">POST送信</a>
+<script>
+
+function execPost(action, data) {
+ var tt = document.getElementById("canvas1");
+ var eachtd = tt.querySelectorAll(":scope > tbody > tr > td");
+ // フォームの生成
+ var form = document.createElement("form");
+ form.setAttribute("action", action);
+ form.setAttribute("method", "post");
+ form.insertAdjacentHTML('afterbegin', '{% csrf_token %}');
+ 
+ form.style.display = "none";
+ document.body.appendChild(form);
+
+ // パラメタの設定
+/*
+var data = []
+if(eachtd[9].style.backgroundColor === ""){
+	data.push("rgb(no color)");
+}else{
+	data.push(eachtd[9].style.backgroundColor);
+}
+
+if(eachtd[10].style.backgroundColor === ""){
+	data.push("no color");
+}else{
+	data.push(eachtd[10].style.backgroundColor);
+}
+
+for(let i=20 ;i<112;i++){
+	if(eachtd[str(i)].style.backgroundColor === ""){
+		data.push("no color");
+	}else{
+		data.push(eachtd[str(i)].style.backgroundColor);
+	}
+}
+*/
+data.push("yesyes")
+for (var i in data) {
+   var input = document.createElement('input');
+   input.setAttribute('type', 'hidden');
+   input.setAttribute('name', i);
+   input.setAttribute('value', data[i]);
+   form.appendChild(input);
+  }
+ // submit
+ form.submit();
+}
+
+
+    </script>
+  </body>
+</html>

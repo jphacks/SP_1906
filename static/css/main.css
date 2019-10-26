@@ -1,0 +1,118 @@
+#index{
+  background-image: url(images/xmas.jpg);
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-attachment: fixed;
+  background-size:cover;
+}
+
+
+header{
+  width:100%;
+  margin:20px; 
+}
+
+p{
+  color:white;
+  margin: 30px;
+}
+
+#index .btn a{
+  background-color: cadetblue;
+  color:white;
+  font-size:25px;
+  display:block;
+  width:320px;
+  text-decoration: none;
+  text-align: center;
+  line-height:50px;
+  margin-top:20px;
+  border-radius: 5px;
+  border:3px solid cadetblue;
+}
+
+#index .btn a:hover{
+  background-color:white;
+  color:cadetblue;
+}
+
+#maker{
+  background-color:lightgray;
+}
+/*
+#colorSelect:{
+  border-radius:3px;
+}
+*/
+#tree{
+  padding:10px;
+  margin-bottom:10px; 
+  border:1px green; 
+  width:400px;
+  height:400px;
+  background:
+  linear-gradient(to bottom right, transparent 50%, green 50.1%) top left/ 50% 100% no-repeat,
+  linear-gradient(to bottom left, transparent 50%, green 50.1%) top right / 50% 100% no-repeat;
+}
+ul{
+  list-style:none;
+}
+li{
+  line-height: 0;
+}
+
+.light1{
+  margin-left:150px;
+}
+.light2{
+  margin-left:140px;
+}
+.light3{
+  margin-left:130px;
+}
+.light4{
+  margin-left:120px;
+}
+.light5{
+  margin-left:110px;
+}
+.light6{
+  margin-left:100px;
+}
+.light7{
+  margin-left:90px;
+}
+.light8{
+  margin-left:80px;
+}
+.light9{
+  margin-left:70px;
+}
+.light10{
+  margin-left:60px;
+}
+.light11{
+  margin-left:50px;
+}
+.light12{
+  margin-left:40px;
+}
+.light13{
+  margin-left:30px;
+}
+.light14{
+  margin-left:20px;
+}
+
+#maker .btn{
+  display:block;
+  width:150px;
+  float:left;
+  color:white;
+  background-color:crimson;
+  text-decoration: none;
+  text-align: center;
+  line-height:50px;
+  margin-top:20px;
+  border-radius:5px;
+}
