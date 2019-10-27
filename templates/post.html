@@ -1,0 +1,50 @@
+<!DECTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>送信完了｜みんなのツリー</title>
+        <link href="../static/css/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+        <link href="../static/images/favicon-2.ico" rel="icon">
+        <script>
+            const mycanvaswidth = 336; //canvasの横幅
+            const mycanvasheight = 360; //canvasの高さ
+            //できれば24の倍数で！なぜならマスが等間隔に並んできれいになるからー！
+        </script>
+    </head>
+
+    <body id="post">
+        <div class="bg">
+            <header>
+                <div class="logo">
+                    <a href="/"><img src="../static/images/logo.png" ></a>
+                </div>
+                <nav>
+                    <ul class="global-nav">
+                      <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/tree">Tree</a></li>
+                        <li><a href="/waitinglist" class="now">Waiting List</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            
+
+                <div class="sousin">
+                    <h1>送ったよ！<br>楽しみだね！<br>あと{{time}}分だよ！</h1>
+                <p class="btn"><a href="/tree">もう一回ツリーを作る</a></p>
+                </div>
+
+
+        </div>
+        <script src="js/snowstorm.js"></script>
+    </body>
+    <footer>
+        <small>(C)2019 DODEKAMIN.</small>
+    </footer>
+
+    </html>

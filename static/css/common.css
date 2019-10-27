@@ -1,0 +1,223 @@
+body {
+  font-size: 15px;
+  line-height: 2;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  background-color: #cccccc;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Bitter', serif;
+  font-size: 36px;
+  border-bottom: 1px solid #cccccc;
+}
+
+h2 {
+  font-family: 'Bitter', serif;
+  font-size: 24px;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+a {
+  text-decoration: none;
+  color: #3583aa;
+}
+
+a:visited {
+  color: #788d98;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn a {
+  font-family: 'Bitter', serif;
+  font-size: 20px;
+  line-height: 50px;
+  display: block;
+  width: 185px;
+  margin-top: 20px;
+  text-align: center;
+  color: #ffffff;
+  border: 3px solid #009cd3;
+  border-radius: 5px;
+  background-color: #009cd3;
+}
+
+.btn a:hover {
+  text-decoration: none;
+  color: #009cd3;
+  background-color: #ffffff;
+}
+
+a img:hover {
+  opacity: .8;
+}
+
+.icon:before {
+  padding-right: 10px;
+  content: "";
+  border-left: 7px solid #9cb4a4;
+}
+
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/* レイアウトに関する指定
+----------------------------------------*/
+
+header {
+  width: 960px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.logo {
+  float: left;
+  margin-top: 50px;
+}
+
+.global-nav {
+  float: right;
+  margin-top: 60px;
+}
+
+.global-nav li {
+  font-family: 'Bitter', serif;
+  font-size: 20px;
+  float: left;
+  margin: 0 20px;
+  list-style: none;
+}
+
+.global-nav li a {
+  color: #ffffff;
+}
+
+.global-nav li a:hover {
+  padding-bottom: 3px;
+  text-decoration: none;
+  border-bottom: 2px solid #ffffff;
+}
+
+#wrap {
+  clear: both;
+  margin-top: 220px;
+  padding: 35px 0;
+  background-color: #ffffff;
+}
+
+.content {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.main-center {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.main {
+  float: left;
+  width: 700px;
+  margin: 0 10px;
+}
+
+.sidebar {
+  font-family: 'Bitter', serif;
+  float: right;
+  width: 200px;
+  margin: 0 10px 0 30px;
+}
+
+.sidebar h2 {
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.sidebar ul a {
+  color: #333333;
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  color: #ffffff;
+  background-color: #767671;
+}
+
+footer small {
+  font-size: 12px;
+}
+
+/* index.htmlへの指定
+----------------------------------------*/
+
+#index {
+  background-image: url(../images/bg-index.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+#index #wrap {
+  margin-top: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+#index .content {
+  margin-top: 150px;
+}
+
+#index h1 {
+  font-family: 'Bitter', serif;
+  font-size: 100px;
+  line-height: 1;
+  margin-bottom: 50px;
+  color: #ffffff;
+  border: none;
+}
+
+#index p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+#index footer {
+  width: 960px;
+  margin: 150px auto 0 auto;
+  text-align: left;
+  background-color: transparent;
+}

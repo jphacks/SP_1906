@@ -1,0 +1,532 @@
+<!DECTYPE html>
+	<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Tree｜みんなのツリー</title>
+		<link href="../static/css/styles.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+		<link href="../static/images/favicon-2.ico" rel="icon">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script>
+			const mycanvaswidth = 336; //canvasの横幅
+			const mycanvasheight = 360; //canvasの高さ
+			//できれば24の倍数で！なぜならマスが等間隔に並んできれいになるからー！
+		</script>
+	</head>
+
+	<body id="tree">
+		<div class="bg">
+			<header>
+				<div class="logo">
+					<a href="/"><img src="../static/images/logo.png" ></a>
+				</div>
+				<nav>
+					<ul class="global-nav">
+                        <li><a href="/">Home</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/tree"　class="now">Tree</a></li>
+						<li><a href="/waitinglist">Waiting List</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<div id="wrap1">
+					<div class="inputs">
+<<<<<<< HEAD
+						
+=======
+						<label class="control-label">ツリー名</label>
+						<input type="text" id="name" class="form-control" value="" placeholder="ツリーの名前を入力" maxlength="20" required>
+						<div class="form-group">
+							<label for="inputState">カテゴリ</label>
+							<select class="form-control" id="category">
+								<option value="1" selected>かわいい</option>
+								<option value="2">かっこいい</option>
+								<option value="3">おもしろい</option>
+								<option value="4">おしゃれ</option>
+								<option value="5">映え</option>
+								<option value="6">文字</option>
+							</select>
+						</div>
+>>>>>>> 08328e64ae87f8412f7c156d00a3d1126240e36b
+						<!-- <p>カテゴリ</p>
+						<select id="category" size="6">
+							<option value="1">かわいい</option>
+							<option value="2">かっこいい</option>
+							<option value="3">おもしろい</option>
+							<option value="4">おしゃれ</option>
+							<option value="5">映え</option>
+							<option value="6">文字</option>
+						</select> -->
+						<h4>モード</h4>
+						<input type="button" id="pen-mode" value="ペン" class="btn page-link text-dark d-inline-block">
+						<input type="button" id="erase-mode" value="消しゴム" class="btn page-link text-dark d-inline-block">
+						<h4>色選択</h4>
+						<input type="color" class="color-picker" value="#6aa5b8" id="takeda"><br>
+						<input type="button" value="塗りつぶし" class="btn page-link text-dark d-inline-block" onclick="yamada()">
+						<input type="button" value="テンプレート１" class="btn page-link text-dark d-inline-block" onclick="template1()">
+						<input type="button" id="undo" value="1つ前の状態に戻す" class="btn page-link text-dark d-inline-block">
+						<button onclick="colorinfos();execPost();return false;" class="btn btn-outline-success">送信</button>
+						<input type="button" id="clear" value="消去" class="btn btn-outline-danger">
+                      <br>
+                      <label class="control-label">ツリー名</label>
+						<input type="text" id="name" class="form-control" value="" placeholder="ツリーの名前を入力">
+						<div class="form-group">
+							<label for="inputState">カテゴリ</label>
+							<select class="form-control" id="category">
+								<option value="1" selected>かわいい</option>
+								<option value="2">かっこいい</option>
+								<option value="3">おもしろい</option>
+								<option value="4">おしゃれ</option>
+								<option value="5">映え</option>
+								<option value="6">文字</option>
+							</select>
+						</div>
+						<p>＊白のマスは白に点灯します。<br>＊黒は消灯です。</p>
+					</div>
+              
+					<div class="canvas1">
+						<canvas class="mycanvas" id="mycanvas">残念ながらHTML5に対応していません</canvas>
+					</div>
+                    <img src="../static/images/star.png" class="star"></div>
+					<div style=background-color:saddlebrown; class="miki"></div>
+					<div class="dodai"></div>
+				</div>
+              
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			function quantize(xx, yy) {
+				for (let i = 0; i < 12; i++) {
+					if (eachheight * i < yy && yy < eachheight * (i + 1)) {
+						let left = rowstart0[i] * eachwidthhalf;
+						let width = eachwidthhalf * 2
+						for (let j = 0; j < cells[i]; j++) {
+							if (left < xx && xx < left + width) {
+								return (sums[i] + j);
+							}
+							left += width;
+						}
+						break;
+					}
+				}
+			}
+
+
+
+
+
+			const mycanvas = document.getElementById('mycanvas');
+			const c = mycanvas.getContext("2d");
+			var eachheight = mycanvasheight / 12;
+			var eachwidthhalf = mycanvaswidth / 24;
+
+			var goright = [1, 1, 1, 1, 1, 1, 2, 1, 1, 4, 1, 1, 2, 1, 1, 1, 1, 1, 1];
+			var goupdown = [-1, -2, -2, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1];
+
+			var rows2 = [2, 3, 4, 6, 7, 8, 9, 10, 11, 12]; //partition は、これ-1.each
+			var steps2 = [1, 1, 1, 1, 1, 1, 1, 2, 2, 1];
+			var rowlength = [4, 6, 8, 12, 14, 16, 18, 20, 20, 22, 22];
+			var rowstart = [10, 9, 8, 6, 5, 4, 3, 2, 1, 0];
+			var rowstart0 = [10, 9, 8, 6, 5, 4, 3, 2, 2, 1, 1, 0];
+
+			var cells = [2, 3, 4, 6, 7, 8, 9, 10, 10, 11, 11, 12];
+			var sums = [0, 2, 5, 9, 15, 22, 30, 39, 49, 59, 70, 81];
+			const mvr = 2;
+			const mvd = 3;
+			const cutr = 1;
+			const cutd = 2;
+
+			var colour = document.getElementById("takeda");
+
+
+
+
+			//in every fill[i] there is a function to fill i'th cell.
+			//you can call function like "fill[i](<whatevercolor>);" so i'th cell will filled with whatevercolor
+			var fill = []
+			for (let i = 0; i < 12; i++) {
+				for (let j = 0; j < cells[i]; j++) {
+					fill[sums[i] + j] = function (colour) {
+						c.fillStyle = colour;
+						c.strokeStyle = "black";
+						c.beginPath();
+						/*c.arc (rowstart0[i]*eachwidthhalf+j*eachwidthhalf*2+mvr+eachwidthhalf,
+						                             eachheight*i+mvd,
+						                        eachwidthhalf,
+						                             0,Math.PI*2);*/
+						c.arc(rowstart0[i] * eachwidthhalf + j * eachwidthhalf * 2 + mvr + eachwidthhalf, eachheight * i +
+							mvd +
+							eachheight / 2, eachwidthhalf * 0.7, 0, Math.PI * 2); //
+						c.closePath();
+						c.fill();
+						//eachwidthhalf*2-cutr,
+						//eachheight-cutd);
+						console.log("filled" + String(sums[i] + j)); //for development
+					};
+				}
+			};
+
+			var colour = document.getElementById("takeda");
+
+			document.getElementById("pen-mode").onclick = function () {
+				colour.value = def_color;
+			};
+
+			document.getElementById("erase-mode").onclick = function () {
+				def_color = colour.value;
+				colour.value = "#ffffff";
+			};
+			//initialize the canvas so thus you cannot change size after.
+			function init() {
+				mycanvas.setAttribute('width', mycanvaswidth + 5);
+				mycanvas.setAttribute('height', mycanvasheight + 5);
+				//c.fillStyle = "black";
+				//c.fill() ;
+				//c.fillRect(0,0,mycanvaswidth,mycanvasheight);
+				c.strokeStyle = "white";
+				c.beginPath();
+				//c.moveTo(1/2*mycanvaswidth,(-0.3)*mycanvasheight);
+				//c.lineTo(mycanvaswidth,0);
+				c.lineTo(mycanvaswidth, mycanvasheight);
+				c.lineTo(0, mycanvasheight);
+				c.closePath();
+				//外形を見たいときは下のコメントアウトを外す
+				c.stroke();
+				//木の外側を書く
+				var xx = 2;
+				var yy = mycanvasheight + 2; //線がはみ出るの防止
+				c.strokeStyle = "black";
+				c.lineWidth = "1";
+				c.beginPath();
+				c.moveTo(xx, yy);
+				c.lineCap = "round";
+				for (let i = 0; i < 20; i++) {
+					yy += eachheight * goupdown[i];
+					c.lineTo(xx, yy);
+					xx += eachwidthhalf * goright[i];
+					c.lineTo(xx, yy)
+				}
+				c.closePath();
+				c.stroke();
+				c.fillStyle = "darkgreen";
+				c.fill();
+
+				c.fillStyle = "white";
+				//丸の枠線かくとこ
+				for (let i = 0; i < 12; i++) {
+					for (let j = 0; j < cells[i]; j++) {
+
+
+						c.strokeStyle = "rgba(0,0,0,0.2)";
+						c.beginPath();
+						/*c.arc (rowstart0[i]*eachwidthhalf+j*eachwidthhalf*2+mvr+eachwidthhalf,
+						                             eachheight*i+mvd,
+						                        eachwidthhalf,
+						                             0,Math.PI*2);*/
+						c.arc(rowstart0[i] * eachwidthhalf + j * eachwidthhalf * 2 + mvr + eachwidthhalf, eachheight * i + mvd +
+							eachheight / 2, eachwidthhalf * 0.7 + 1, 0, Math.PI * 2); //
+						c.closePath();
+						c.stroke();
+						//eachwidthhalf*2-cutr,
+						//eachheight-cutd);
+						//console.log("filled"+String(sums[i]+j)); //for developmentÏ
+
+					};
+
+				};
+				for (var i = 0; i < 93; i++) {
+					fill[i]("white")
+				}
+			}
+			//更新時にalertを出すやつ
+			var onBeforeunload = function (e) {
+				e.returnValue = 'ちょっと待ってくださいよ。まだダメですよ。';
+			};
+			window.addEventListener('beforeunload', onBeforeunload, false);
+
+			init();
+		</script>
+
+
+		<script>
+			//script for mouse drawing, undo, and erase
+			var mouse = {
+				x: 0,
+				y: 0,
+				x1: 0,
+				y1: 0
+			};
+			var draw = false;
+			mycanvas.addEventListener("mousemove", function (e) {
+				var rect = e.target.getBoundingClientRect();
+				mouseX = e.clientX - rect.left;
+				mouseY = e.clientY - rect.top;
+
+				if (draw === true) {
+					mouseX1 = mouseX;
+					mouseY1 = mouseY;
+					if (quantize(mouseX, mouseY) === undefined) {
+						console.log("out of tree!!!!") //for test
+					} else {
+						fill[quantize(mouseX, mouseY)](colour.value);
+					}
+				}
+			});
+			mycanvas.addEventListener("mousedown", function (e) {
+				draw = true;
+				mouseX1 = mouseX;
+				mouseY1 = mouseY;
+				undoImage = c.getImageData(0, 0, mycanvas.width, mycanvas.height);
+				if (quantize(mouseX, mouseY) === undefined) {
+					console.log("out of tree!!!!") //for test
+				} else {
+					fill[quantize(mouseX, mouseY)](colour.value);
+				}
+			});
+			mycanvas.addEventListener("mouseup", function (e) {
+				draw = false;
+			});
+			window.addEventListener("mouseup", function (e) {
+				draw = false;
+			});
+			$('#clear').click(function (e) {
+				if (!confirm('本当に消去しますか？'))
+					return;
+				e.preventDefault();
+				init();
+			});
+			$('#undo').click(function (e) {
+				c.putImageData(undoImage, 0, 0);
+			});
+		</script>
+
+
+		<script>
+			//script for fill and for smartphones
+
+
+			//recieves where you touched and returns which cell it is
+
+
+			//for smartphones
+			var finger1 = {
+				x: 0,
+				y: 0,
+				x1: 0,
+				y1: 0
+			}
+			//get where touch started
+			mycanvas.addEventListener("touchstart", function (e) {
+				e.preventDefault();
+				var rect = e.target.getBoundingClientRect();
+				undoImage = c.getImageData(0, 0, mycanvas.width, mycanvas.height);
+				finger1.x1 = e.touches[0].clientX - rect.left;
+				finger1.y1 = e.touches[0].clientY - rect.top;
+				if (quantize(finger1.x1, finger1.y1) === undefined) {
+					console.log("out of tree!!!!") //for test
+				} else {
+					fill[quantize(finger1.x1, finger1.y1)](colour.value);
+				}
+			});
+			//draw when move while touching
+			mycanvas.addEventListener("touchmove", function (e) {
+				e.preventDefault();
+				var rect = e.target.getBoundingClientRect();
+				finger1.x = e.touches[0].clientX - rect.left;
+				finger1.y = e.touches[0].clientY - rect.top;
+				finger1.x1 = finger1.x;
+				finger1.y1 = finger1.y;
+				if (quantize(finger1.x, finger1.y) === undefined) {
+					console.log("out of tree! (touched)")
+				} else {
+					fill[quantize(finger1.x, finger1.y)](colour.value);
+				}
+			});
+		</script>
+
+		<script>
+			//script for getting infos of the tree and send
+			function rgb2hex(rgb) {
+				return "#" + rgb.map(function (value) {
+					return ("0" + value.toString(16)).slice(-2);
+				}).join("").slice(0, -2);
+			}
+
+
+			//reads color each 6px from upperleft  
+			function colorinfos() {
+				colorinfo = [];
+				for (let i = 0; i < 12; i++) {
+					let xx = eachwidthhalf * rowstart0[i] + 14;
+					for (let j = 0; j < cells[i]; j++) {
+						//console.log(xx,(eachheight * i )+ 14 );
+						let dd = c.getImageData(xx, (eachheight * i )+ 14 , 1, 1);
+						let ddd = Array.from(dd.data);
+						//console.log(xx,eachheight*i+6)
+						xx += eachwidthhalf * 2;
+						colorinfo.push(ddd);
+
+					}
+				}
+				//console.log(colorinfo);
+			}
+		</script>
+		<form id="colorpost" action="/posttest" method="POST">{% csrf_token %}</form>
+		<script>
+			//script to post
+			function execPost() {
+				// フォームの生成
+				form = document.getElementById("colorpost");
+				form.style.display = "none";
+				document.body.appendChild(form);
+				// パラメタの設定
+				for (var i in colorinfo) {
+					// var input = document.createElement('input');
+					// input.setAttribute('type', 'hidden');
+					// input.setAttribute('name', i);
+					// input.setAttribute('value', colorinfo[i]);
+					// form.appendChild(input);
+					set(i, colorinfo[i]);
+				}
+				// input = document.createElement('input');
+				// input.setAttribute('type', 'hidden');
+				// input.setAttribute('name', 'name');
+				// input.setAttribute('value', document.getElementById("name").value);
+				// form.appendChild(input);
+
+				// input = document.createElement('input');
+				// input.setAttribute('type', 'hidden');
+				// input.setAttribute('name', 'category');
+				// input.setAttribute('value', document.getElementById("category").value);
+				// form.appendChild(input);
+				set("name", document.getElementById("name").value);
+				set("category", document.getElementById("category").value);
+				console.log(form);
+				// post
+				form.submit();
+			}
+
+			function set(name, value) {
+				var input = document.createElement('input');
+				input.setAttribute('type', 'hidden');
+				input.setAttribute('name', name);
+				input.setAttribute('value', value);
+				form.appendChild(input);
+			}
+
+			function template1() {
+				fill[0]("white");
+				fill[1]("white");
+				fill[2]("white");
+				fill[3]("white");
+				fill[4]("white");
+				fill[5]("red");
+				fill[6]("red");
+				fill[7]("red");
+				fill[8]("red");
+				fill[9]("red");
+				fill[10]("red");
+				fill[11]("red");
+				fill[12]("red");
+				fill[13]("red");
+				fill[14]("red");
+				fill[15]("red");
+				fill[16]("red");
+				fill[17]("red");
+				fill[18]("red");
+				fill[19]("red");
+				fill[20]("red");
+				fill[21]("red");
+				fill[22]("red");
+				fill[23]("red");
+				fill[24]("red");
+				fill[25]("red");
+				fill[26]("red");
+				fill[27]("red");
+				fill[28]("red");
+				fill[29]("red");
+				fill[30]("red");
+				fill[31]("red");
+				fill[32]("red");
+				fill[33]("red");
+				fill[34]("red");
+				fill[35]("red");
+				fill[36]("red");
+				fill[37]("red");
+				fill[38]("red");
+				fill[39]("red");
+				fill[40]("red");
+				fill[41]("red");
+				fill[42]("red");
+				fill[43]("red");
+				fill[44]("red");
+				fill[45]("red");
+				fill[46]("red");
+				fill[47]("red");
+				fill[48]("red");
+				fill[49]("red");
+				fill[50]("red");
+				fill[51]("red");
+				fill[52]("red");
+				fill[53]("red");
+				fill[54]("red");
+				fill[55]("red");
+				fill[56]("red");
+				fill[57]("red");
+				fill[58]("red");
+				fill[59]("red");
+				fill[60]("red");
+				fill[61]("red");
+				fill[62]("red");
+				fill[63]("red");
+				fill[64]("red");
+				fill[65]("red");
+				fill[66]("red");
+				fill[67]("red");
+				fill[68]("red");
+				fill[69]("red");
+				fill[70]("white");
+				fill[71]("white");
+				fill[72]("white");
+				fill[73]("white");
+				fill[74]("white");
+				fill[75]("white");
+				fill[76]("white");
+				fill[77]("white");
+				fill[78]("white");
+				fill[79]("white");
+				fill[80]("white");
+				fill[81]("white");
+				fill[82]("white");
+				fill[83]("white");
+				fill[84]("white");
+				fill[85]("white");
+				fill[86]("white");
+				fill[87]("white");
+				fill[88]("white");
+				fill[89]("white");
+				fill[90]("white");
+				fill[91]("white");
+				fill[92]("white");
+			}
+
+			function yamada() {
+				for(var i=0; i < 93; i++){
+					fill[i](document.getElementById("takeda").value);
+				};
+			}
+		</script>
+		<script src="../static/js/snowstorm.js"></script>
+	</body>
+	<footer>
+		<small>(C)2019 TEAM DODEKAMIN.</small>
+	</footer>
+
+	</html>
