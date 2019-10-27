@@ -42,8 +42,6 @@ def waitinglist(request):
     return render(request,"waitinglist.html",params)
 
 
-
-
 def index(request):
     if request.method=="GET":
         params={
@@ -54,6 +52,7 @@ def index(request):
         return render(request, "index.html", params)
     else:
         return HttpResponse("please get to this page")
+
 
 
 def table(request):
@@ -81,7 +80,8 @@ def posttest(request):
         aa = "<style>body{margin:100px;}</style>"
         aa+="your data is :<br><small>"
         aa=""
-        for i in range(len(request.POST)-1):
+        print(request.POST[str(0)])
+        for i in range(93):
             aaa = request.POST[str(i)]
             color = aaa.replace("rgb","")
             color = aaa.replace("#","0x")
@@ -90,10 +90,14 @@ def posttest(request):
         if len(aa)!=837:
             return HttpResponse("data unproperly sent. please post it again.")
         else:
-            treedata = Tree(data=aa, name="testname", look=2)
+            name = request.POST["name"]
+            category = request.POST["category"]
+            treedata = Tree(data=aa, name=name, look=category)
             treedata.save()
             print("record has created!")
-            return HttpResponse(aa)
+            print(str(request.POST["name"]))
+            print(str(request.POST["category"]))
+            return HttpResponse("楽しみだね！")
 
 
 
@@ -112,9 +116,13 @@ def esp(request):
         #ret={"1":"#ffff00","2":"#ffa500"}
         ret=""
         for j in range(93):
-            ret+="0x00ff00"
+            ret+="000"
             ret+='\r'
-            j += 1
+            ret+="255"
+            ret+='\r'
+            ret+="000"
+            ret+='\r'
+        print(ret)
         #ret="#ff0000"+"\r"+"#123456"+"\r"+"#098123"+"\r"+"#098654"
         return  HttpResponse(ret)   
 
